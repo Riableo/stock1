@@ -13,3 +13,7 @@ I used SQLite by data persist, based on [flutter documentation](https://docs.flu
 ## Use example
 
 <video src="/media/example.webm" width="320" height="240" controls></video>
+
+<video controls>
+<source src="/media/example.mp4" type="video/mp4">
+</video>
