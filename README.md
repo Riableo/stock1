@@ -10,10 +10,7 @@ I used SQLite by data persist, based on [flutter documentation](https://docs.flu
 - CRUD's
 - Navigation between screens and pass data each one
 
-## Use example
+## demo app
 
-<video src="/media/example.webm" width="320" height="240" controls></video>
+https://github.com/Riableo/stock1/assets/62998301/caa89e60-3c06-476c-8208-e07babc6ffa1
 
-<video controls>
-<source src="/media/example.mp4" type="video/mp4">
-</video>
