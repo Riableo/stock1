@@ -24,7 +24,7 @@ class MainRoute extends State<ProductList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('test title'),
+        title: const Text('Products'),
       ),
       body: FutureBuilder<List<Prod>>(
           future: productListFuture,
@@ -35,28 +35,62 @@ class MainRoute extends State<ProductList> {
               return Center(child: Text('Error: ${index.error}'));
             } else {
               final List<Prod> productList = index.data!;
-              return ListView.builder(
-                itemCount: productList.length,
-                itemBuilder: (context, index) {
-                  return Dismissible(
-                    onDismissed: (direction) {
-                      setState(() {
-                        deleteProd(productList[index].id);
-                        productList.removeAt(index);
-                      });
-                    },
-                    key: UniqueKey(), 
-                    child: ListTile(
-                      title: Text(productList[index].name),
-                      subtitle: Text('Stock: ${productList[index].stock}'),
-                      leading: CircleAvatar(
-                        child: Text('${productList[index].id}'),
+              if (productList.isEmpty) {
+                return const Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.assignment_add,
+                        color: Colors.yellow,
+                        size: 150,
                       ),
-                    )
-                  );
-                  
-                },
-              );
+                      Text('No items')
+                    ],
+                  )
+                );
+              }else{
+
+                return ListView.builder(
+                  itemCount: productList.length,
+                  itemBuilder: (context, index) {
+                    return Dismissible(
+                      background: Container(
+                        color: Colors.red[700],
+                        padding: const EdgeInsets.only(right: 20.0),
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            Icon(
+                              Icons.delete,
+                            )
+                          ],
+                        ),
+                      ),
+                      onDismissed: (direction) {
+                        setState(() {
+                          deleteProd(productList[index].id);
+                          productList.removeAt(index);
+                        });
+                      },
+                      key: UniqueKey(), 
+                      child: ListTile(
+                        title: Text(productList[index].name),
+                        subtitle: Text('Stock: ${productList[index].stock}'),
+                        leading: CircleAvatar(
+                          child: Text('${productList[index].id}'),
+                        ),
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => Prods(prodArgs: productList[index]))).then((_) => setState(() {
+                            productListFuture = products();
+                          }));
+                        },
+                      )
+                    );
+                    
+                  },
+                );
+              }
             }
           },
         ) ,
