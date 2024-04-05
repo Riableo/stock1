@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
+import "package:flutter/widgets.dart";
 import "package:stock1/infrastructure/DB/queries/crud.dart";
 import "package:stock1/presentation/screens/prodform.dart";
-
 import "../../infrastructure/models/prods.dart";
 
 class ProductList extends StatefulWidget {
@@ -77,8 +77,13 @@ class MainRoute extends State<ProductList> {
                       child: ListTile(
                         title: Text(productList[index].name),
                         subtitle: Text('Stock: ${productList[index].stock}'),
-                        leading: CircleAvatar(
-                          child: Text('${productList[index].id}'),
+                        leading: const CircleAvatar(
+                          //child: Iconprods.getImage(productList[index].name) != '' ? Image.asset(Iconprods.getImage(productList[index].name)) : Text('${productList[index].id}'),
+                          //backgroundImage: ExactAssetImage('../../assets/images/burger.png'),
+                          //child: Text('${productList[index].id}'),
+                          radius: 30.0,
+                          backgroundImage: ExactAssetImage('../assets/images/burger.png'),
+                          backgroundColor: Colors.transparent,
                         ),
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) => Prods(prodArgs: productList[index]))).then((_) => setState(() {
@@ -94,8 +99,10 @@ class MainRoute extends State<ProductList> {
             }
           },
         ) ,
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const Prods())).then((_) => setState(() {
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add_rounded),
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const Prods())).then((_) => setState(() {
           productListFuture = products();
         }));
       },),
