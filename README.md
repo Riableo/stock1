@@ -22,13 +22,14 @@ In addition, the app have a form validation for the register of new products and
 
 ## Demo app 📱
 
+### Screen shots 📷
+
 <p align="center">
     <img src="assets/img/main1.png" alt="Screen with prods" style="width: 150px;">
     <img src="assets/img/imageprod.png" alt="Screen with prod selected" style="width: 150px;">
     <img src="assets/img/noimage.png" alt="Screen without prod image" style="width: 150px;">
 </p>
 
-<p align="center">
-    https://github.com/Riableo/stock1/assets/62998301/caa89e60-3c06-476c-8208-e07babc6ffa1
-</p>
+### Video 🎥
+https://github.com/Riableo/stock1/assets/62998301/caa89e60-3c06-476c-8208-e07babc6ffa1
 
