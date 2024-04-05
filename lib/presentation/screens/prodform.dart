@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:stock1/infrastructure/models/iconprods.dart";
 import "../../infrastructure/DB/queries/crud.dart";
 import "../../infrastructure/models/prods.dart";
 
@@ -48,6 +49,8 @@ class _ProdsState extends State<Prods> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Iconprods.getImage(_nameController.value.text) != '' ? Image.asset(Iconprods.getImage(_nameController.value.text), width: 100, height: 100,)
+              : const Icon(Icons.image_not_supported_rounded, size: 150,),
               TextFormField(
                 controller: _idController,
                 enabled: widget.prodArgs?.id == null, // Deshabilitar si el ID se proporciona
