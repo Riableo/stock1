@@ -1,6 +1,6 @@
 class Iconprods {
   static final Map<String, String> imageMap = {
-    'hamburguer': 'assets/images/burger.png',
+    'hamburger': 'assets/images/burger.png',
     'soda' : 'assets/images/soda.png',
     'pizza' : 'assets/images/pizza.png',
     'hotdog' : 'assets/images/hotdog.png',
