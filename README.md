@@ -31,5 +31,9 @@ In addition, the app have a form validation for the register of new products and
 </p>
 
 ### Video 🎥
+#### V1
 https://github.com/Riableo/stock1/assets/62998301/caa89e60-3c06-476c-8208-e07babc6ffa1
+#### V2
+https://github.com/Riableo/stock1/assets/62998301/3717be43-c408-448c-96eb-0724c01c0546
+
 
